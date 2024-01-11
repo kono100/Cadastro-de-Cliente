@@ -1,0 +1,66 @@
+﻿@model ToDo.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes do Cliente</h1>
+
+<div>
+    <h4>Tarefa</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.Name) *@
+            Nome
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @* @Html.DisplayTelefoneFor(model => model.Telefone) *@
+            Telefone
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @* @Html.DisplayEmailFor(model => model.Email) *@
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @* @Html.DisplayEnd_CompletoFor(model => model.End_Completo) *@
+            Endereço Completo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.End_Completo)
+        </dd>
+
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.EndDate) *@
+            Data Final
+        </dt>
+        <dd class="col-sm-10">
+            @Html.TextBoxFor(model => model.EndDate, "{0:d MMM yyyy}", new {@disabled="true"})
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Voltar</a>
+</div>
